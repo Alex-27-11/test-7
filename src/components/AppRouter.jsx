@@ -12,23 +12,22 @@ import { AuthContext } from '../context';
 
 const AppRouter = () => {
 	const { isAuth } = useContext(AuthContext);
-	console.log(isAuth)
 	return (
 		isAuth
 			?
 			<>
 				<Navbar />
 				<Routes>
-					<Route path='/' element={<Posts />} />
 					{/* {routes.map(route =>
 						<Route
+						key={route.path}
 							path={route.path}
 							element={route.element}
 							exact={route.exact}
 						/>
 					)} */}
+					<Route path='/' element={<Posts />} />
 					<Route path='about' element={<About />} />
-					{/* <Route exact path='posts' element={} /> */}
 					<Route exact path='/:id' element={<PostIdPage />} />
 					<Route path='*' element={<Error />} />
 				</Routes>
