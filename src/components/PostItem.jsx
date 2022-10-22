@@ -11,7 +11,7 @@ const PostItem = (props) => {
 				</div>
 			</div>
 			<div className='post__btn'>
-				<NavLink className={({ isActive }) => isActive ? 'nav__btn' : 'nav__btn'} to={`/posts/${props.post.id}`}>Открыть</NavLink>
+				<NavLink className={({ isActive }) => isActive ? 'nav__btn' : 'nav__btn'} to={`/${props.post.id}`}>Открыть</NavLink>
 				<MyButton onClick={() => props.remove(props.post)}>Удалить</MyButton>
 			</div>
 		</div>

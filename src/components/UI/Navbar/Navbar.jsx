@@ -17,7 +17,7 @@ const Navbar = () => {
 				<MyButton style={{ marginLeft: 30 }} onClick={logout}>Выйти</MyButton>
 				<div className='navbar__links'>
 					<Link style={{ marginRight: 10 }} to='/about'>О сайте</Link>
-					<Link style={{ marginRight: 30 }} to='/posts'>Посты</Link>
+					<Link style={{ marginRight: 30 }} to='/'>Посты</Link>
 				</div>
 			</header>
 			<Outlet />

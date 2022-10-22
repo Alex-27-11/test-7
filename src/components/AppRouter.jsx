@@ -16,8 +16,10 @@ const AppRouter = () => {
 	return (
 		isAuth
 			?
-			<Routes>
-				<Route path='/' element={<Navbar />}>
+			<>
+				<Navbar />
+				<Routes>
+					<Route path='/' element={<Posts />} />
 					{/* {routes.map(route =>
 						<Route
 							path={route.path}
@@ -26,18 +28,23 @@ const AppRouter = () => {
 						/>
 					)} */}
 					<Route path='about' element={<About />} />
-					<Route exact path='posts' element={<Posts />} />
-					<Route exact path='posts/:id' element={<PostIdPage />} />
+					{/* <Route exact path='posts' element={} /> */}
+					<Route exact path='/:id' element={<PostIdPage />} />
 					<Route path='*' element={<Error />} />
-				</Route>
-			</Routes>
+				</Routes>
+			</>
+
 			:
-			<Routes>
-				<Route path='/' element={<Navbar />}>
-					<Route exact path='*' element={<Login />} />
-					{/* <Route path='*' element={<Error />} /> */}
-				</Route>
-			</Routes>
+			<>
+				<Navbar />
+				<Routes>
+					<Route path='/' element={<Login />}>
+						{/* <Route exact path='*' element={} /> */}
+						<Route path='*' element={<Error />} />
+					</Route>
+				</Routes>
+			</>
+
 
 
 	);
