@@ -16,7 +16,7 @@ const AppRouter = () => {
 		isAuth
 			?
 			<>
-				<Navbar />
+				{/* <Navbar /> */}
 				<Routes>
 					{/* {routes.map(route =>
 						<Route
@@ -26,21 +26,27 @@ const AppRouter = () => {
 							exact={route.exact}
 						/>
 					)} */}
-					<Route path='/' element={<Posts />} />
-					<Route path='about' element={<About />} />
-					<Route exact path='/:id' element={<PostIdPage />} />
-					<Route path='*' element={<Error />} />
+					<Route path='/' element={<Navbar />}>
+						<Route index element={<Posts />} />
+						<Route path='about' element={<About />} />
+						<Route exact path='/:id' element={<PostIdPage />} />
+						<Route path='*' element={<Error />} />
+					</Route>
+
 				</Routes>
 			</>
 
 			:
 			<>
-				<Navbar />
+				{/* <Navbar /> */}
 				<Routes>
-					<Route path='/' element={<Login />}>
+					<Route path='/' element={<Navbar />}>
+						<Route index element={<Login />} />
 						{/* <Route exact path='*' element={} /> */}
 						<Route path='*' element={<Error />} />
 					</Route>
+
+
 				</Routes>
 			</>
 
